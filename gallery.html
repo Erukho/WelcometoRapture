@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galéria - Ryan Industries</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <audio id="bg-audio" autoplay loop>
+      <source src="ambient.mp3" type="audio/mpeg" />
+      Váš prehliadač nepodporuje audio element.
+    </audio>
+    <header>
+      <div class="logo">
+        <a href="RyanIndustries.html"><img src="logo.png" alt="Logo" /></a>
+      </div>
+      <nav id="main-nav">
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        <ul class="menu">
+          <li><a href="RyanIndustries.html">Úvod</a></li>
+          <li><a href="gallery.html">Galéria</a></li>
+          <li><a href="about.html">O nás</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+          <li>
+            <a id="audio-toggle" class="audio-toggle"> Ambient? </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <h2>Obrázková galéria</h2>
+        <div class="gallery">
+          <img src="bd.jpg" alt="Big Daddy" />
+          <img src="mestecko.jpg" alt="Rapture - mesto" />
+          <img src="velry.jpg" alt="Rapture - podvodný svet" />
+        </div>
+      </section>
+
+      <section class="slider">
+        <img src="banner.png" alt="Pohľad na Rapture" id="slider-image" />
+        <div class="slider-controls">
+          <button id="prev" aria-label="Predchádzajúci obrázok">
+            &#10094;
+          </button>
+          <button id="next" aria-label="Nasledujúci obrázok">&#10095;</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 1959 Ryan Industries. Všetky práva vyhradené.</p>
+    </footer>
+  </body>
+</html>
