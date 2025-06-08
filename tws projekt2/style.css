@@ -1,0 +1,426 @@
+/* Základné nastavenia pre telo stránky */
+body {
+  margin: 0;
+  font-family: "Cinzel", serif; /* Použité elegantné písmo Cinzel */
+  background: linear-gradient(135deg, #0d0d0d, #2a2a2a); /* Tmavý gradient pozadia */
+  color: #d9b384; /* Základná farba textu (svetlo zlatá) */
+}
+
+/* Hlavička: nastavenie rozloženia a farieb */
+header {
+  background-color: #101010; /* Veľmi tmavé pozadie pre hlavičku */
+  color: #d9b384;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Logo: veľkosť obrázka loga */
+.logo img {
+  height: 60px; /* Veľkosť loga na desktop verzii */
+}
+
+/* Navigačné menu: zoznam odkazov s medzerami */
+nav .menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Odkazy v menu: základný štýl a prechod pre hover efekt */
+nav .menu li a {
+  color: #d9b384;
+  text-decoration: none;
+  padding: 6px 12px;
+  transition: background 0.3s ease;
+}
+nav .menu li a:hover {
+  background-color: rgba(217, 179, 132, 0.2);
+  border-radius: 3px;
+}
+
+/* Hamburger menu pre mobilné zariadenia */
+.menu-toggle {
+  display: none; /* Predvolene skryté na desktopoch */
+  cursor: pointer;
+  font-size: 26px;
+  color: #d9b384;
+}
+
+/* Responzívne nastavenia pre zariadenia s maximálnou šírkou 600px */
+@media (max-width: 600px) {
+  /* Zobrazenie hamburger ikony */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Zoznam menu sa zobrazuje vertikálne a predvolene je skrytý */
+  nav .menu {
+    flex-direction: column;
+    display: none; /* Skryté, kým ich používateľ neotvorí */
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Položky menu sa upravia pre lepšiu čitateľnosť */
+  nav .menu li {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+/* Štýl pre tlačidlo ambient audia */
+.audio-toggle {
+  padding: 6px 12px;
+  border: 1px solid #d9b384;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+  color: #d9b384;
+}
+.audio-toggle:hover {
+  background-color: rgba(217, 179, 132, 0.2);
+}
+
+/* HERO sekcia: úvodné zobrazenie s obrázkom na pozadí */
+.hero {
+  color: #f8f8f8;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Polopriehľadný prekryv na tlmenie pozadia */
+  z-index: 0;
+}
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Intro sekcia: základný textový obsah s pozadím */
+.intro {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: rgba(10, 10, 10, 0.8);
+}
+.intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #d4af37; /* Zlatý odtieň pre nadpis */
+}
+.intro p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+.intro a.btn {
+  background-color: #d4af37;
+  color: #0d0d0d;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+.intro a.btn:hover {
+  background-color: #b38f2e;
+}
+
+/* Highlights sekcia: boxy s prezentáciou hodnot */
+.highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 50px 20px;
+  background-color: #151515;
+}
+.highlight {
+  flex: 1 1 280px; /* Flexibilná šírka */
+  margin: 15px;
+  padding: 20px;
+  background-color: #1d1d1d;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(217, 179, 132, 0.3);
+  transition: transform 0.3s ease;
+}
+.highlight:hover {
+  transform: scale(1.03);
+}
+.highlight h3 {
+  margin-top: 0;
+  color: #d4af37;
+}
+
+/* Parallax sekcia: pevné pozadie s efektom fixnej pozície */
+.parallax {
+  background-image: url('ouou.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  position: relative;
+}
+.parallax .content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1.3rem;
+}
+.parallax::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* Attractions sekcia: mriežka s oblastami a atrakciami */
+.attractions {
+  padding: 50px 20px;
+  background-color: #0a0a0a;
+  text-align: center;
+}
+.attractions h2 {
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #d4af37;
+}
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.attraction {
+  background-color: rgba(10, 10, 10, 0.95);
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(217, 179, 132, 0.4);
+  transition: transform 0.3s ease;
+}
+.attraction:hover {
+  transform: translateY(-5px);
+}
+.attraction h3 {
+  margin-top: 0;
+  color: #d4af37;
+}
+
+/* History sekcia: príbeh a informácie */
+.history {
+  padding: 50px 20px;
+  background-color: #1e1e1e;
+  text-align: center;
+}
+.history h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+.history p {
+  font-size: 1.2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #d9b384;
+}
+
+/* Footer: spodná časť stránky s kontaktnými informáciami */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #101010;
+  color: #d9b384;
+}
+
+/* Responzívne nastavenia pre mobilné zariadenia */
+@media (max-width: 600px) {
+  /* Nastavenie menu: vertikálne zobrazenie so skrytím pred spustením */
+  nav .menu {
+    flex-direction: column;
+    display: none;
+  }
+  nav .menu.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Štýl pre sekciu ryan-monologue (zakladateľské vyjadrenia) */
+.ryan-monologue {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-style: italic;
+  background-color: #0c0c0c;
+  color: #c1b49a;
+  border-left: 5px solid #d4af37;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+}
+.ryan-monologue h2 {
+  font-style: normal;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #d4af37;
+}
+.ryan-monologue .signature {
+  margin-top: 2rem;
+  text-align: right;
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Všeobecné štýly pre sekcie s obsahu, ako O nás, hodnoty, zakladateľ, ocenenia */
+.about, .ryan-monologue, .history, .values, .founder, .awards {
+  background-color: rgba(10, 10, 10, 0.9);
+  color: #d9b384;
+  padding: 20px;
+  border-left: 4px solid #d9b384;
+  box-shadow: 0px 4px 10px rgba(217, 179, 132, 0.5);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* Zakladateľ: nastavenie obrázku zakladateľa */
+.founder-img {
+  display: block;
+  margin: auto;
+  width: 250px;
+  border: 3px solid #d9b384;
+  box-shadow: 4px 4px 10px rgba(217, 179, 132, 0.4);
+  transition: transform 0.3s ease-in-out;
+}
+.founder-img:hover {
+  transform: scale(1.1);
+}
+
+/* Kontakt sekcia: formuláre a vstupné polia */
+.contact {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: rgba(10, 10, 10, 0.95);
+  border-left: 4px solid #d9b384;
+  box-shadow: 0 4px 10px rgba(217, 179, 132, 0.5);
+}
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #d4af37;
+}
+.contact p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #d9b384;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+label {
+  font-weight: bold;
+  color: #d9b384;
+}
+input, textarea {
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid #d9b384;
+  padding: 8px;
+  color: #d9b384;
+  font-size: 1rem;
+}
+textarea {
+  height: 120px;
+}
+button {
+  background: #d4af37;
+  color: #0d0d0d;
+  border: none;
+  padding: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #b38f2e;
+}
+
+/* Responzívne nastavenia pre formuláre na mobilných zariadeniach */
+@media (max-width: 600px) {
+  .contact {
+    padding: 20px;
+  }
+  input, textarea {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+}
+
+/* Galéria: mriežka obrázkov s jednotnou veľkosťou a efektmi */
+.gallery {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.gallery img {
+  width: 250px;
+  height: auto;
+  border: 3px solid #d9b384;
+  box-shadow: 4px 4px 10px rgba(217, 179, 132, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Slider sekcia s fixným tmavým pozadím a jednotnou veľkosťou obrázka */
+.slider {
+  background-color: #101010;
+  position: relative;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+}
+#slider-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.slider-controls button {
+  background: rgba(0, 0, 0, 0.6);
+  color: #d9b384;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+.slider-controls button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
